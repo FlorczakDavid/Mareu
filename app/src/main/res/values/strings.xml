@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MaRéu</string>
+    <string name="addMeetingConfirmSaveButton">Save</string>
+    <string name="location">Location</string>
+    <string name="pickDate">Choose date</string>
+    <string name="topic">Topic</string>
+    <string name="filterMeetingsFragmentTitle">Filter</string>
+    <string name="filterMeetingFragmentTimeTabTitle">Time</string>
+    <string name="filterMeetingFragmentLocationTabTitle">Location</string>
+    <string name="stop_filtering">Stop Filtering</string>
+    <string-array name="meetingRoomList">
+        <item>Meeting Room A</item>
+        <item>Meeting Room B</item>
+        <item>Meeting Room C</item>
+        <item>Meeting Room D</item>
+        <item>Meeting Room E</item>
+        <item>Meeting Room F</item>
+        <item>Meeting Room G</item>
+        <item>Meeting Room H</item>
+        <item>Meeting Room I</item>
+        <item>Meeting Room J</item>
+    </string-array>
+</resources>

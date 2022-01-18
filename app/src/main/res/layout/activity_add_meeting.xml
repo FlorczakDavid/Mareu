@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AddMeetingActivity">
+
+    <TextView
+        android:id="@+id/newMeetingConditionsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/pickDate"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <ImageButton
+        android:id="@+id/newMeetingPickDateImageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#00000000"
+        android:src="@drawable/ic_baseline_calendar_today_24"
+        app:layout_constraintBottom_toBottomOf="@+id/newMeetingConditionsTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/newMeetingConditionsTextView" />
+
+    <LinearLayout
+        android:id="@+id/newMeetingPickDateLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/newMeetingConditionsTextView">
+
+        <DatePicker
+            android:id="@+id/newMeetingPickDateDatePicker"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TimePicker
+            android:id="@+id/newMeetingPickDateTimePicker"
+            android:timePickerMode="spinner"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/newMeetingTopicTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sujet"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/newMeetingPickDateLinearLayout"/>
+
+    <EditText
+        android:id="@+id/newMeetingParticipantsTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Participants"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/newMeetingTopicTextView"/>
+
+    <Spinner
+        android:id="@+id/newMeetingLocationsListSpinner"
+        class="androidx.appcompat.app.AlertController$RecycleListView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newMeetingParticipantsTextView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/newMeetingSaveActionMaterialButton"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+        android:enabled="true"
+        android:text="@string/addMeetingConfirmSaveButton"
+        android:textSize="30sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
