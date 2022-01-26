@@ -15,7 +15,7 @@ public class ListMeetingsPagerAdapter extends FragmentPagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        return position == 0 ? FilterTimeFragment.newInstance() : FilterLocationFragment.newInstance();
+        return position == 0 ? FilterMeetingByTimeFragment.newInstance() : FilterMeetingByLocationFragment.newInstance();
     }
 
     @Override

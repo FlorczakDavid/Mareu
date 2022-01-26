@@ -200,9 +200,9 @@ public class AddMeetingActivity extends AppCompatActivity {
         Meeting meeting = new Meeting(meetingDate, meetingLocation, meetingTopic, meetingUsers);
         mApiService.createMeeting(meeting);
 
-        Intent intent = new Intent(this, MainActivity.class);
-        this.startActivity(intent);
 
+
+        finish();
     }
 
     User[] quickUserCreation(String userNamesListInOneString) {
