@@ -2,10 +2,12 @@ package com.florczakdavid.maru.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ImageButton;
@@ -31,8 +33,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
-
-//    public ArrayList<Room>;
 
     // UI Components
     @BindView(R.id.meetingListRecyclerView)
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void init() {
+        //choose which list to display and set the list's adapter
         meetings = mApiService.isMeetingListBeingFiltered() ? mApiService.getFilteredMeetings() : mApiService.getMeetings();
 
         mMeetingListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -92,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         init();
     }
 
+
     @OnClick(R.id.filterImageButton)
     void filterMeetings() {
         FilterMeetingFragment filterMeetingFragment = new FilterMeetingFragment();
@@ -101,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.addMeetingFloatingActionButton)
     void addNeighbour() {
-        AddMeetingActivity.navigate(this);
+        Intent intent = new Intent(this, AddMeetingActivity.class);
+        ActivityCompat.startActivity(this, intent, null);
     }
 }

@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +16,6 @@ import com.florczakdavid.maru.DI.MeetingApiService;
 import com.florczakdavid.maru.R;
 import com.florczakdavid.maru.model.Meeting;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -26,8 +24,10 @@ import java.util.List;
 
 public class FilterMeetingByTimeFragment extends Fragment {
 
-    private Button mButton;
+    // UI Components (I am not using ButterKnife in this case as I already understand and want to use a different method for this part of this school project)
+    private Button stopFilteringButton;
     private DatePicker mDatePicker;
+
     private Calendar calendar = Calendar.getInstance();
     private MeetingApiService mApiService;
     private boolean isVisible;
@@ -46,9 +46,9 @@ public class FilterMeetingByTimeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_filter_meeting_by_time, container, false);
 
         mDatePicker = v.findViewById(R.id.fragmentFilterMeetingByTimeDatePicker);
-        mButton = v.findViewById(R.id.fragmentFilterMeetingByTimeButton);
+        stopFilteringButton = v.findViewById(R.id.fragmentFilterMeetingByTimeButton);
 
-        mButton.setOnClickListener(new View.OnClickListener() {
+        stopFilteringButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mApiService.stopFilteringMeetings();

@@ -3,6 +3,8 @@ package com.florczakdavid.maru;
 import org.hamcrest.collection.IsIterableContainingInAnyOrder;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import static org.junit.Assert.*;
 
@@ -13,11 +15,7 @@ import com.florczakdavid.maru.model.Meeting;
 
 import java.util.List;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
+@RunWith(JUnit4.class)
 public class MeetingServiceTest {
 
         private MeetingApiService service;
@@ -48,10 +46,13 @@ public class MeetingServiceTest {
             Meeting meetingToAdd = service.getMeetings().get(0);
             service.createMeeting(meetingToAdd);
             assertTrue(service.getMeetings().contains(meetingToAdd));
-
-//            service.filterMeetings();
         }
 
-
-
+        @Test
+        public void filterMeetingsWithSuccess() {
+            Meeting[] meetingsToFilter = {service.getMeetings().get(0)};
+            service.filterMeetings(meetingsToFilter);
+            assertTrue(service.getFilteredMeetings().stream().count() < service.getMeetings().stream().count());
+            assertThat(service.getFilteredMeetings(), IsIterableContainingInAnyOrder.containsInAnyOrder(meetingsToFilter));
+        }
     }

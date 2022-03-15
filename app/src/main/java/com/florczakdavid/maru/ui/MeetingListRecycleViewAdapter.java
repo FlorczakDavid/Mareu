@@ -48,9 +48,11 @@ public class MeetingListRecycleViewAdapter extends RecyclerView.Adapter<MeetingL
     public void onBindViewHolder(ViewHolder holder, int position) {
         Meeting meeting = mData.get(position);
 
+        //Set meeting range display format to look like this: Mon, 01 Jan 00:00 - 00:45
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, d MMM HH:mm");
         SimpleDateFormat endFormat = new SimpleDateFormat("HH:mm");
         long endDate = meeting.getTime().getTime();
+        //add 45 minutes to selected date to be the meeting's end date and set the textview to display these dates
         endDate += 45 * 60 * 1000;
         Date end = new Date(endDate);
         String displayedDate = simpleDateFormat.format(meeting.getTime().getTime()) + " - " + endFormat.format(end);

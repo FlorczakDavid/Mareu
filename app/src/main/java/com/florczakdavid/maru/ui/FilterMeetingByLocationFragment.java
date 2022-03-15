@@ -26,8 +26,10 @@ public class FilterMeetingByLocationFragment extends Fragment {
 
     private FilterByLocationListRecycleViewAdapter mFilterByLocationListRecycleViewAdapter;
     private MeetingApiService mApiService;
+
     private RecyclerView recyclerView;
     private Button mButton;
+
     private boolean isVisible;
     private boolean isFiltering;
 

@@ -5,7 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1775" />
         <entry key="app/src/main/res/layout-v28/fragment_filter_meeting_by_time.xml" value="0.1375" />
-        <entry key="app/src/main/res/layout/activity_add_meeting.xml" value="0.30808080808080807" />
+        <entry key="app/src/main/res/layout/activity_add_meeting.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_add_reu.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3633879781420765" />
         <entry key="app/src/main/res/layout/fragment_filter_meeting.xml" value="0.17864583333333334" />
